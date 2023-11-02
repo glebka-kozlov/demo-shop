@@ -6,7 +6,7 @@ const path = require("path");
 module.exports = (env, argv) => {
   return {
     mode: argv.mode,
-    entry: "./src/projectName.js",
+    entry: "./src/index.js",
     output: {
       filename: env === "development" ? "[name].js" : "[name].[fullhash].js",
       path: path.resolve(__dirname, "dist"),
