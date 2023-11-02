@@ -19,8 +19,9 @@ module.exports = (env, argv) => {
       },
       compress: true,
       hot: true,
-      port: 8080
+      port: 3001
     },
+    cache: false,
     module: {
       rules: [
         {
@@ -57,13 +58,13 @@ module.exports = (env, argv) => {
         __MODE__: JSON.stringify(argv.mode)
       }),
       new HtmlWebpackPlugin({
-        favicon: "./favicon.ico",
+        favicon: "./src/images/favicon.ico",
         filename: "./index.html",
         template: "./src/index.hbs",
         templateParameters: require("./src/local/ru.json")
       }),
       new HtmlWebpackPlugin({
-        favicon: "./favicon.ico",
+        favicon: "./src/images/favicon.ico",
         filename: "./eng/index.html",
         template: "./src/index.hbs",
         templateParameters: require("./src/local/en.json")
