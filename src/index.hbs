@@ -1,0 +1,97 @@
+<html lang="{{lang}}">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <meta name="description" itemprop="description" content="{{description}}" />
+    <meta name="keywords" itemprop="keywords" content="{{keywords}}" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104194-41"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-104194-41');
+    </script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark position-fixed start-0 end-0 z-2">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img class="navbar-logo" src="./images/nike.svg" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav fw-bold">
+            <li class="nav-item">
+              <a class="nav-link active text-uppercase fs-5" aria-current="page" href="#">Men</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase fs-5" href="#">Women</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase fs-5" href="#">Kids</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="gap-3 d-none d-lg-flex">
+          <img class="navbar-icon" src="./images/search.svg" />
+          <img class="navbar-icon" src="./images/cart.svg" />
+        </div>
+      </div>
+    </nav>
+
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide slide-dark">
+          {{> partials/slide-1-bg}}
+          <div class="container h-100 position-relative">
+            <div class="row flex-lg-row-reverse h-100 align-items-center">
+              <div class="shoe-wrap col-12 col-lg-6 position-relative">
+                <div class="shoe-wrap-text">NIKE</div>
+                <img class="shoe-img img-fluid" src="./images/nike-1.png" />
+              </div>
+              <div class="col-12 col-lg-6">
+                {{> partials/slide-1-buy-form}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide slide-pink">
+          {{> partials/slide-2-bg}}
+          <div class="container h-100 position-relative">
+            <div class="row flex-lg-row-reverse h-100 align-items-center">
+              <div class="shoe-wrap col-12 col-lg-6 position-relative">
+                <div class="shoe-wrap-text">NIKE</div>
+                <img class="shoe-img img-fluid" src="./images/nike-2.png" />
+              </div>
+              <div class="col-12 col-lg-6">
+                {{> partials/slide-2-buy-form}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide slide-green">
+          {{> partials/slide-3-bg}}
+          <div class="container h-100 position-relative">
+            <div class="row flex-lg-row-reverse h-100 align-items-center">
+              <div class="shoe-wrap col-12 col-lg-6 position-relative">
+                <div class="shoe-wrap-text">NIKE</div>
+                <img class="shoe-img img-fluid" src="./images/nike-3.png" />
+              </div>
+              <div class="col-12 col-lg-6">
+                {{> partials/slide-3-buy-form}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+
+    </div>
+
+  </body>
+</html>
