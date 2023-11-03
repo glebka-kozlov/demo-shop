@@ -1,41 +1,22 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const webpack = require("webpack");
 const path = require("path");
 
 module.exports = (env, argv) => {
-  return {
-    mode: argv.mode,
+
+  let config = {
     entry: "./src/index.js",
     output: {
-      filename: env === "development" ? "[name].js" : "[name].[fullhash].js",
-      path: path.resolve(__dirname, "dist"),
-      chunkFilename: "[name].[fullhash].js",
-      clean: true
+      filename: argv.mode === "development" ? "[name].js" : "[name].[fullhash].js",
+      path: argv.mode === "development" ? path.resolve(__dirname, "dev") : path.resolve(__dirname, "dist"),
+      chunkFilename: "[name].[fullhash].js"
     },
-    devServer: {
-      static: {
-        directory: path.join(__dirname, "./project-name"),
-      },
-      compress: true,
-      hot: true,
-      port: 3001
-    },
-    cache: false,
     module: {
       rules: [
         {
-          test: /\.css$/,
+          test: /\.(scss|css)$/,
           use: [
-            MiniCssExtractPlugin.loader, 
-            "css-loader"
-          ]
-        },
-        {
-          test: /\.scss$/,
-          use: [
-            MiniCssExtractPlugin.loader, 
-            "css-loader", 
+            "style-loader",
+            "css-loader",
             "sass-loader"
           ]
         },
@@ -48,32 +29,35 @@ module.exports = (env, argv) => {
           loader: "handlebars-loader",
           options: {
             inlineRequires: "/images/"
-          },
-        },
+          }
+        }
       ]
     },
     plugins: [
-      new MiniCssExtractPlugin(),
-      new webpack.DefinePlugin({
-        __MODE__: JSON.stringify(argv.mode)
-      }),
       new HtmlWebpackPlugin({
-        favicon: "./src/images/favicon.ico",
         filename: "./index.html",
         template: "./src/index.hbs",
-        templateParameters: require("./src/local/ru.json")
-      }),
-      new HtmlWebpackPlugin({
-        favicon: "./src/images/favicon.ico",
-        filename: "./eng/index.html",
-        template: "./src/index.hbs",
         templateParameters: require("./src/local/en.json")
-      }),
+      })
     ],
-    performance: {
-      hints: false,
-      maxEntrypointSize: 512000,
-      maxAssetSize: 512000
-    }
+    mode: argv.mode
   };
+
+  if (argv.mode === "development") {
+
+    config.devtool = "source-map";
+
+    config.devServer = {
+      historyApiFallback: true,
+      devMiddleware: {
+        writeToDisk: true
+      },
+      open: true,
+      compress: true,
+      hot: true,
+      port: 3000
+    };
+  }
+
+  return config;
 };

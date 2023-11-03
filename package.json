@@ -1,31 +1,24 @@
 {
-  "name": "handlebars-webpack-template",
+  "name": "demo-shop",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode=development",
     "publish": "webpack --mode=production"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "css-loader": "^6.7.2",
-    "favicons": "^7.0.2",
-    "favicons-webpack-plugin": "^6.0.0",
-    "handlebars": "^4.7.8",
-    "handlebars-loader": "^1.7.3",
-    "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.7.6",
-    "sass": "^1.56.1",
-    "sass-loader": "^13.2.0",
-    "style-loader": "^3.3.1",
-    "swiper": "^9.4.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.0",
-    "webpack-dev-server": "^4.11.1"
+    "webpack-dev-server": "^4.11.1",
+    "html-webpack-plugin": "^5.5.0",
+    "node-sass": "^7.0.1",
+    "sass-loader": "^13.2.0",
+    "css-loader": "^6.7.2",
+    "style-loader": "^3.3.1",
+    "handlebars": "^4.7.8",
+    "handlebars-loader": "^1.7.3"
   },
   "dependencies": {
+    "swiper": "^9.4.1",
     "bootstrap": "^5.3.2"
   }
 }
