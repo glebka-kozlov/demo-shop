@@ -46,6 +46,7 @@ svg {
   background-color: rgba(255, 255, 255, 0.4);
 
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .shoe-wrap {
@@ -86,6 +87,7 @@ svg {
 
   justify-content: center;
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   &.swiper-pagination-bullet-active {
     font-size: 24px;
     font-weight: bold;
