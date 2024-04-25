@@ -30,7 +30,8 @@ var btnShopNow1Element = document.getElementById("btn-shop-now-1");
 btnShopNow1Element.addEventListener("click", function () {
 
   new cpay.PaymentWidget().init({
-    merchantId: "1b51360f-98d2-4336-a93e-4f72be2b2edd",
+    //merchantId: "1b51360f-98d2-4336-a93e-4f72be2b2edd",
+    merchantId: "94284cd5-3936-460f-aa82-ca09f21be29d",
     invoice: {
       description: "test payment"
     },
@@ -62,7 +63,8 @@ var btnShopNow2Element = document.getElementById("btn-shop-now-2");
 btnShopNow2Element.addEventListener("click", function () {
 
   new cpay.PaymentWidget().init({
-    merchantId: "1b51360f-98d2-4336-a93e-4f72be2b2edd",
+    //merchantId: "1b51360f-98d2-4336-a93e-4f72be2b2edd",
+    merchantId: "94284cd5-3936-460f-aa82-ca09f21be29d",
     invoice: {
       description: "test payment"
     },
@@ -94,7 +96,8 @@ var btnShopNow3Element = document.getElementById("btn-shop-now-3");
 btnShopNow3Element.addEventListener("click", function () {
 
   new cpay.PaymentWidget().init({
-    merchantId: "569f837a-1034-4165-8ff2-3620b2bf6d8d",
+    //merchantId: "569f837a-1034-4165-8ff2-3620b2bf6d8d",
+    merchantId: "94284cd5-3936-460f-aa82-ca09f21be29d",
     invoice: {
       description: "test payment"
     },
